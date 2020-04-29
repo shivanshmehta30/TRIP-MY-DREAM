@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-storage.js"></script>
+<script src="./Login/js/login.js"></script>
+<style>
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+
+}
+
+
+body
+{
+  background-image: url("10.jpg");
+  background-size: cover;
+}
+
+h2
+{
+  font-family: 'Raleway', sans-serif;
+}
+
+#a
+{
+  color: white;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+.container {
+  padding: 0 16px;
+  font-family: 'Raleway', sans-serif;
+  background-color: white;
+  height: 200px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.w
+{
+    border-style: ridge;
+    border-color: white;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  float: right;
+  margin-right: 20px;
+  
+
+    width:5%;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+img {
+    height: 300px;
+}
+</style>
+</head>
+<body>
+
+<h2 align="center" id="a">PLEASE SELECT TOUR TYPE</h2>
+<p><button id="logout" class="w" onClick="logout()">Sign Out</button></p>
+<p><button class="w" onclick="location.href='./boaringpage/boardingpage.html'">Home</button></p>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="4.jpg" alt="SOLO" style="width:100%">
+      <div class="container">
+        <h2>SOLO</h2>
+        <p class="title">TRAVEL SOLO</p>
+        <p>Traveling solo means getting to know the real you!</p>
+  
+        <p><button class="button" onclick="location.href='./Solo/index_solo.html'">I CHOOSE THIS</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="5.jpg" alt="COUPLE" style="width:100%">
+      <div class="container">
+        <h2>COUPLE</h2>
+        <p class="title">ALWAYS TOGETHER</p>
+        <p>OH! DARLING LET'S BE ADVENTURES</p>
+        
+        <p><button class="button" onclick="location.href='./Couple/index_couple.html'">I CHOOSE THIS</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="8.jpg" alt="FRIENDS" style="width:100%">
+      <div class="container">
+        <h2>FRIENDS</h2>
+        <p class="title">F.R.I.E.N.D.S</p>
+        <p>Friends that travel together, stay together</p>
+        
+        <p><button class="button" onclick="location.href='./sample_page/friendspage.html'">I CHOOSE THIS</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="9.jpg" alt="FAMILY" style="width:100%">
+      <div class="container">
+        <h2>FAMILY</h2>
+        <p class="title">FAMILY VACCATIONS</p>
+        <p>Traveling In The Company Of Those We Love Is Home In Motion.</p>
+        
+        <p><button class="button" onclick="location.href='./sample_page/familypage.html'">I CHOOSE THIS</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+	firebase.auth().onAuthStateChanged(function(user)
+	{
+		console.log(user);
+
+	});
+</script>
+</body>
+</html>
